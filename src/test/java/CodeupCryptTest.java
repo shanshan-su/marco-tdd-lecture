@@ -9,4 +9,13 @@ public class CodeupCryptTest {
         CodeupCrypt.version = 1.5;
         assertEquals(1.5, CodeupCrypt.version, 0);
     }
+
+    @Test
+    public void testIfHashPasswordWorks() {
+        // fer -> f3r
+        assertEquals("f3r", CodeupCrypt.hashPassword("fer"));
+        assertEquals("C0d39p", CodeupCrypt.hashPassword("Codeup"));
+        assertEquals("123", CodeupCrypt.hashPassword("123"));
+        assertEquals("124", CodeupCrypt.hashPassword("12a"));
+    }
 }
